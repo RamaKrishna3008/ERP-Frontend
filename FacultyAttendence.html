@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ERP</title>
+  <style>
+    :root {
+      --color-1st: lightgrey;
+      --color-2nd: #242424;
+      --menu-width-desktop: 240px;
+      --menu-width-tablet: 90px;
+      --menu-width-smartphone: 230px;
+    }
+
+    body {
+      background: var(--color-1st);
+      margin: 0;
+      font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+      color: #000;
+      padding-left: var(--menu-width-desktop);
+      min-height: 100vh;
+    }
+
+    main {
+      position: relative;
+    }
+
+    .select-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    select {
+      width: 150px;
+      padding: 8px 12px;
+      font-size: 16px;
+      border: 2px solid #242424;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      color: #000;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    select:hover {
+      border-color: #007bff;
+    }
+
+    select:focus {
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    option {
+      padding: 10px;
+      background-color: #ffffff;
+      color: #242424;
+    }
+
+    .menu {
+      background: var(--color-2nd);
+      height: 100vh;
+      width: var(--menu-width-desktop);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      outline: none;
+    }
+
+    .menu .avatar {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2em 0.5em;
+      text-align: center;
+    }
+
+    .menu .avatar img {
+      width: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--color-1st);
+      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+    }
+
+    .menu .avatar h2 {
+      font-weight: normal;
+      margin-bottom: 0;
+      color: var(--color-1st);
+    }
+
+    .menu ul {
+      list-style: none;
+      padding: 0.5em 0;
+      margin: 0;
+    }
+
+    .menu ul li {
+      padding: 0.5em 1em 0.5em 3em;
+      font-size: 0.95em;
+      background-repeat: no-repeat;
+      background-position: left 15px center;
+      background-size: auto 20px;
+      transition: all 0.15s linear;
+      cursor: pointer;
+    }
+
+    .menu ul li a {
+      color: var(--color-1st);
+      text-decoration: none;
+    }
+
+    .menu ul li:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    table {
+      width: calc(100% - var(--menu-width-desktop));
+      margin: 0 auto 40px auto;
+      border-collapse: collapse;
+      background-color: #f9f9f9;
+    }
+
+    table th,
+    table td {
+      border: 2px solid #242424;
+      padding: 12px;
+      text-align: center;
+      color: #242424;
+    }
+
+    table th {
+      background-color: #242424;
+      color: var(--color-1st);
+    }
+
+    table tr:nth-child(even) {
+      background-color: #e6e6e6;
+    }
+
+    table tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+    .button-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    input[type="submit"] {
+      background-color: green;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: darkgreen;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="menu" tabindex="0">
+    <div class="smartphone-menu-trigger"></div>
+    <header class="avatar">
+      <img src="ProfilePicture.jpg" alt="User Avatar" />
+      <h2>Faculty Name</h2>
+    </header>
+    <ul>
+      <li tabindex="0"><a href="FacultyHome.html">Dashboard</a></li>
+      <li tabindex="0"><a href="FacultyCourseSelection.html">Courses</a></li>
+      <li tabindex="0"><a href="FacultyStudent.html">Student</a></li>
+      <li tabindex="0"><a href="UpdateFaculty.html">Update Profile</a></li>
+      <li tabindex="0"><a href="#">Logout</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <form action="Success.html" >
+      <div class="select-container">
+        <label for="hour-select">Select hour: </label>
+        <select id="hour-select" name="hour">
+          <option>--Select--</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+      </div>
+
+      <table align="center" border="2">
+        <tr>
+          <th>S.no</th>
+          <th>Student Id</th>
+          <th>Student name</th>
+          <th>Action</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2200030798</td>
+          <td>MANDALANENI SAI BALAJI SIVA RAMA KRISHNA</td>
+          <td><input type="checkbox" name="attendance[]" value="2200030798"></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>2200030796</td>
+          <td>MUPPIDI SAI KRISHNA</td>
+          <td><input type="checkbox" name="attendance[]" value="2200030796"></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>2200032360</td>
+          <td>HRUSHIKESH KANTAMANENI</td>
+          <td><input type="checkbox" name="attendance[]" value="2200032360"></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>2200030123</td>
+          <td>MOHAN CHAND SURYA</td>
+          <td><input type="checkbox" name="attendance[]" value="2200030123"></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>2200031456</td>
+          <td>KARTIK</td>
+          <td><input type="checkbox" name="attendance[]" value="2200031456"></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>2200031789</td>
+          <td>ROHITH</td>
+          <td><input type="checkbox" name="attendance[]" value="2200031789"></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>2200030801</td>
+          <td>ANJALI KUMARI</td>
+          <td><input type="checkbox" name="attendance[]" value="2200030801"></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>2200030812</td>
+          <td>RAHUL SHARMA</td>
+          <td><input type="checkbox" name="attendance[]" value="2200030812"></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>2200030823</td>
+          <td>PRIYA SINGH</td>
+          <td><input type="checkbox" name="attendance[]" value="2200030823"></td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>2200030834</td>
+          <td>VIKAS PATEL</td>
+          <td><input type="checkbox" name="attendance[]" value="2200030834"></td>
+        </tr>
+      </table>
+
+      <div class="button-container">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </main>
+
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ERP</title>
+  <style>
+    :root {
+      --color-1st: lightgrey;
+      --color-2nd: #242424;
+      --menu-width-desktop: 240px;
+      --menu-width-tablet: 90px;
+      --menu-width-smartphone: 230px;
+    }
+
+    body {
+      background: var(--color-1st);
+      margin: 0;
+      font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+      color: #000;
+      padding-left: var(--menu-width-desktop);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    main {
+      position: relative;
+      height: 100vh;
+      width: calc(100% - var(--menu-width-desktop));
+    }
+
+    .menu {
+      background: var(--color-2nd);
+      height: 100vh;
+      width: var(--menu-width-desktop);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      outline: none;
+    }
+
+    .menu .avatar {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2em 0.5em;
+      text-align: center;
+    }
+
+    .menu .avatar img {
+      width: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--color-1st);
+      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+    }
+
+    .menu .avatar h2 {
+      font-weight: normal;
+      margin-bottom: 0;
+      color: var(--color-1st);
+    }
+
+    .menu ul {
+      list-style: none;
+      padding: 0.5em 0;
+      margin: 0;
+    }
+
+    .menu ul li {
+      padding: 0.5em 1em 0.5em 3em;
+      font-size: 0.95em;
+      transition: all 0.15s linear;
+      cursor: pointer;
+    }
+
+    .menu ul li a {
+      color: var(--color-1st);
+      text-decoration: none;
+    }
+
+    .menu ul li:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: 20px auto;
+      padding: 20px;
+      border: 2px solid var(--color-2nd);
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: var(--color-2nd);
+      margin-bottom: 15px;
+    }
+
+    select {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 2px solid #242424;
+      border-radius: 5px;
+      font-size: 1em;
+      background-color: #fff;
+      cursor: pointer;
+      transition: border-color 0.3s;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    input[type="submit"] {
+      width: 50%;
+      padding: 12px;
+      margin-top: 20px;
+      font-size: 1.1em;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    @media screen and (max-width: 900px) and (min-width: 400px) {
+      body {
+        padding-left: var(--menu-width-tablet);
+      }
+
+      .menu {
+        width: var(--menu-width-tablet);
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      body {
+        padding-left: 0;
+      }
+
+      .menu {
+        width: var(--menu-width-smartphone);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="menu" tabindex="0">
+    <header class="avatar">
+      <img src="ProfilePicture.jpg" alt="User Avatar" />
+      <h2>Faculty Name</h2>
+    </header>
+    <ul>
+      <li tabindex="0"><a href="FacultyHome.html">Dashboard</a></li>
+      <li tabindex="0"><a href="FacultyCourseSelection.html">Courses</a></li>
+      <li tabindex="0"><a href="FacultyStudent.html">Student</a></li>
+      <li tabindex="0"><a href="UpdateFaculty.html">Update Profile</a></li>
+      <li tabindex="0"><a href="#">Logout</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <form action="FacultyCourses.html">
+      <h2>🎓 SHS University</h2>
+      <select name="academicyear" required>
+        <option>--Select--</option>
+        <option>2024-2025</option>
+      </select><br><br>
+      <select name="sem" required>
+        <option>--Select--</option>
+        <option>Odd Sem</option>
+        <option>Even Sem</option>
+        <option>Summer Term</option>
+      </select><br>
+      <input type="submit" value="Submit">
+    </form>
+  </main>
+
+</body>
+
+</html>
