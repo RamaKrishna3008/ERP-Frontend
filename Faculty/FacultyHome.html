@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ERP</title>
+  <style>
+    body {
+      background: lightgrey;
+      margin: 0;
+      font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+      color: #000;
+      padding-left: 240px;
+    }
+
+    main {
+      position: relative;
+      height: 100vh;
+    }
+
+    main .helper {
+      background: rgba(0, 0, 0, 0.2);
+      color: lightgrey;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      padding: 1.2em 2em;
+      text-align: center;
+      border-radius: 20px;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    main .helper span {
+      color: rgba(0, 0, 0, 0.2);
+      font-size: 0.4em;
+      display: block;
+    }
+
+    .menu {
+      background: #242424;
+      height: 100vh;
+      width: 240px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .menu .avatar {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2em 0.5em;
+      text-align: center;
+    }
+
+    .menu .avatar img {
+      width: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid lightgrey;
+      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+    }
+
+    .menu .avatar h2 {
+      font-weight: normal;
+      margin-bottom: 0;
+      color: lightgrey;
+    }
+
+    .menu ul {
+      list-style: none;
+      padding: 0.5em 0;
+      margin: 0;
+    }
+
+    .menu ul li {
+      padding: 0.5em 1em;
+      font-size: 1em;
+      transition: all 0.15s linear;
+      cursor: pointer;
+    }
+
+    .menu ul li a {
+      color: lightgrey;
+      text-decoration: none;
+      display: block;
+    }
+
+    .menu ul li:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Tablet styles */
+    @media screen and (max-width: 900px) {
+      body {
+        padding-left: 90px;
+      }
+
+      .menu {
+        width: 90px;
+      }
+
+      .menu .avatar img {
+        width: calc(90px - 30px);
+      }
+
+      .menu ul li {
+        height: calc(90px / 1.5);
+        text-align: center;
+        font-size: 0.9em;
+      }
+    }
+
+    /* Smartphone styles */
+    @media screen and (max-width: 600px) {
+      body {
+        padding-left: 0;
+      }
+
+      .menu {
+        width: 100%;
+        height: 100vh;
+        transform: translateX(-100%);
+      }
+
+      .menu.open {
+        transform: translateX(0);
+      }
+
+      .menu .avatar {
+        padding: 1em;
+      }
+
+      .menu .avatar img {
+        width: 80px;
+      }
+
+      .menu ul {
+        text-align: center;
+        padding: 0;
+      }
+
+      .menu ul li {
+        padding: 1em;
+        font-size: 1.2em;
+      }
+
+      .menu-toggle {
+        background: #242424;
+        color: lightgrey;
+        font-size: 1.5em;
+        position: fixed;
+        top: 1em;
+        left: 1em;
+        border: none;
+        padding: 0.5em;
+        cursor: pointer;
+        z-index: 10;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <nav class="menu" tabindex="0">
+    <header class="avatar">
+      <img src="ProfilePicture.jpg" alt="User Avatar"/>
+      <h2>Faculty Name</h2>
+    </header>
+    <ul>
+      <li tabindex="0"><a href="FacultyHome.html">Dashboard</a></li>
+      <li tabindex="0"><a href="FacultyCourseSelection.html">Courses</a></li>
+      <li tabindex="0"><a href="FacultyStudent.html">Student</a></li>
+      <li tabindex="0"><a href="FacultyHome.html">Update Profile</a></li>
+      <li tabindex="0"><a href="#">Logout</a></li>
+    </ul>
+  </nav>
+</body>
+</html>
