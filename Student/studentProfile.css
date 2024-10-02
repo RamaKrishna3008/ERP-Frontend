@@ -1,0 +1,120 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 200px;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    position: fixed;
+   
+    padding: 15px;
+}
+
+.navbar h2 {
+    margin: 0 0 20px 0;
+}
+
+
+.navbar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+
+.navbar a:hover {
+    background-color: #575757;
+}
+
+/* Content Styles */
+.content {
+    margin-left: 220px; /* Add margin to accommodate the navbar */
+    padding: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center; /* Center vertically */
+    padding-left: 50px;
+    margin-top: 50px;
+}
+.profile-info{
+    margin-top: -200px;
+    margin-left: 300px;
+}
+
+.profile-image {
+    border-radius: 10%;
+    width: 200px; /* Set desired width */
+    height: 200px; /* Set desired height */
+    margin-right: 10px; /* Space between image and text */
+}
+
+.profile-pic {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.profile-pic img {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    border-radius: 50%;
+}
+
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1;
+}
+
+.dropdown.show {
+    display: block;
+}
+
+.dropdown-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.dropdown-btn:hover {
+    background-color: darkred;
+}
+.profile-info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.profile-info td {
+    padding: 8px; 
+    vertical-align: top; 
+}
+
+.profile-info td:first-child {
+    width: 30%; 
+    font-weight: bold;
+}
+
+.profile-info td:nth-child(2) {
+    width: 70%; 
+}

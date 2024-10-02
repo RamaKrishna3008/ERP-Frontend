@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student ERP - Courses</title>
+    <link rel="stylesheet" href="studentHome.css">
+    <style>
+        /* Table Styles */
+        #coursesTable {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        #coursesTable th, #coursesTable td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #coursesTable th {
+            background-color: #333;
+            color: white;
+        }
+
+        #coursesTable tbody tr:nth-child(odd) {
+            background-color: #f9f9f9; /* Light gray for odd rows */
+        }
+
+        #coursesTable tbody tr:nth-child(even) {
+            background-color: #ffffff; /* White for even rows */
+        }
+
+        #coursesTable tbody tr:hover {
+            background-color: #f1f1f1; /* Light gray for hover effect */
+        }
+
+        /* Dropdown Styles */
+        select {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        /* Popup Styles */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border: 2px solid #333;
+            background-color: white;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .popup-header {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .popup-close {
+            cursor: pointer;
+            color: red;
+            float: right;
+            font-weight: bold;
+        }
+
+        .popup-background {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <h2>Menu</h2>
+        <a href="studentHome.html">Dashboard</a>
+        <a href="studentProfile.html">Profile</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="courses.html" style="color:darkgray;">Courses</a>
+    </div>
+
+    <div class="content">
+        <h1>Courses</h1>
+
+        <label for="yearSelect">Select Year:</label>
+        <select id="yearSelect" onchange="updateCourses()">
+            <option value="">--Select Year--</option>
+            <option value="1st Year">1st Year</option>
+            <option value="2nd Year">2nd Year</option>
+            <option value="3rd Year">3rd Year</option>
+        </select>
+
+        <label for="semesterSelect">Select Semester:</label>
+        <select id="semesterSelect" onchange="updateCourses()">
+            <option value="">--Select Semester--</option>
+            <option value="1st Semester">1st Semester</option>
+            <option value="2nd Semester">2nd Semester</option>
+        </select>
+
+        <table id="coursesTable">
+            <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Course Code</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+
+        <div class="popup-background" id="popupBackground"></div>
+        <div class="popup" id="popup">
+            <span class="popup-close" onclick="closePopup()">×</span>
+            <div class="popup-header" id="popupHeader"></div>
+            <div id="popupContent"></div>
+        </div>
+    </div>
+
+    <div class="profile-pic" onclick="toggleDropdown()">
+        <img src="johndoe.jpg" alt="Profile Picture">
+    </div>
+
+    <div class="dropdown" id="dropdown">
+        <button class="dropdown-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        let courses = [];
+
+        // Fetch courses data from CSV file
+        fetch('Courses.csv')
+            .then(response => response.text())
+            .then(data => {
+                const rows = data.split('\n').slice(1); // Skip header row
+                courses = rows.map(row => {
+                    const cols = row.split(',');
+                    return {
+                        name: cols[0],
+                        code: cols[1],
+                        year: cols[2],
+                        semester: cols[3],
+                        description: cols[4]
+                    };
+                });
+                console.log("Courses loaded:", courses); // Debugging line
+            })
+            .catch(error => console.error('Error fetching the CSV file:', error));
+
+            function updateCourses() {
+    const year = document.getElementById('yearSelect').value;
+    const semester = document.getElementById('semesterSelect').value;
+    const tableBody = document.getElementById('coursesTable').getElementsByTagName('tbody')[0];
+
+    // Clear previous rows
+    tableBody.innerHTML = '';
+
+    // Log the selected values
+    console.log("Selected Year:", year);
+    console.log("Selected Semester:", semester);
+
+    // Ensure both year and semester are selected
+    if (year && semester) {
+        const filteredCourses = courses.filter(course => course.year === year && course.semester === semester);
+
+        // Log the filtered results
+        console.log("Filtered Courses:", filteredCourses);
+
+        if (filteredCourses.length === 0) {
+            tableBody.innerHTML = '<tr><td colspan="3">No courses found for the selected year and semester.</td></tr>';
+        } else {
+            filteredCourses.forEach(course => {
+                const newRow = tableBody.insertRow();
+                const nameCell = newRow.insertCell(0);
+                const codeCell = newRow.insertCell(1);
+                const detailsCell = newRow.insertCell(2);
+
+                nameCell.textContent = course.name;
+                codeCell.textContent = course.code;
+
+                const detailsButton = document.createElement('button');
+                detailsButton.textContent = 'Details';
+                detailsButton.onclick = () => {
+                    showPopup(course.name, course.code, course.description);
+                };
+                detailsCell.appendChild(detailsButton);
+            });
+        }
+    } else {
+        tableBody.innerHTML = '<tr><td colspan="3">Please select both year and semester.</td></tr>';
+    }
+}
+
+        function showPopup(courseName, courseCode, description) {
+            document.getElementById('popupHeader').textContent = `${courseName} (${courseCode})`;
+            document.getElementById('popupContent').textContent = description;
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('popupBackground').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('popupBackground').style.display = 'none';
+        }
+
+        // Function to toggle the dropdown menu
+        function toggleDropdown() {
+            document.getElementById("dropdown").classList.toggle("show");
+        }
+
+        // Function to handle logout
+        function logout() {
+            alert("Logged out!");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.profile-pic img')) {
+                var dropdowns = document.getElementsByClassName("dropdown");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

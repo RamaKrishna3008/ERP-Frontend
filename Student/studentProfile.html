@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student ERP - Profile</title>
+    <link rel="stylesheet" href="studentProfile.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <h2>Menu</h2>
+        <a href="studentHome.html">Dashboard</a>
+        <a href="studentProfile.html" style="color:darkgray;">Profile</a>
+        <a href="studentAttendance.html">Attendance</a>
+        <a href="studentCourses.html">Courses</a>
+    </div>
+
+    <div class="content">
+        <h1 align="center">Student Profile</h1>
+        <div class="profile">
+            <img src="johndoe.jpg" alt="Profile Picture" class="profile-image">
+        </div>
+        <div class="profile-info">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>Student ID:</strong></td>
+                        <td>123456789</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Department:</strong></td>
+                        <td>Computer Science</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Year:</strong></td>
+                        <td>3rd Year</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email:</strong></td>
+                        <td>johndoe@example.com</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phone:</strong></td>
+                        <td>(123) 456-7890</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Date of Birth:</strong></td>
+                        <td>January 1, 2000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Address:</strong></td>
+                        <td>123 University Ave, College Town, CT 12345</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+    <div class="profile-pic" onclick="toggleDropdown()">
+        <img src="johndoe.jpg" alt="Profile Picture">
+    </div>
+
+    <div class="dropdown" id="dropdown">
+        <button class="dropdown-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            document.getElementById("dropdown").classList.toggle("show");
+        }
+
+        function logout() {
+            // Implement logout functionality here
+            alert("Logged out!");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.profile-pic img')) {
+                var dropdowns = document.getElementsByClassName("dropdown");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

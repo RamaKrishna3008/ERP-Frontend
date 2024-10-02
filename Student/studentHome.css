@@ -1,0 +1,114 @@
+body {
+    display: flex;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    width: 200px;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #444;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: white;
+    min-height: 100vh;
+    text-align: center; /* Center the text */
+}
+
+.profile-pic {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.profile-pic img {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    border-radius: 50%;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 70px; /* Adjust based on your design */
+    right: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown.show {
+    display: block;
+}
+
+.dropdown-btn {
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.dropdown-btn:hover {
+    background-color: #f4f4f4;
+}
+
+/* Table Styles */
+#attendanceTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#attendanceTable th, #attendanceTable td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#attendanceTable th {
+    background-color: #333;
+    color: white;
+}
+
+#attendanceTable tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Light gray for odd rows */
+}
+
+#attendanceTable tbody tr:nth-child(even) {
+    background-color: #ffffff; /* White for even rows */
+}
+
+#attendanceTable tbody tr:hover {
+    background-color: #f1f1f1; /* Light gray for hover effect */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    #attendanceTable {
+        font-size: 14px; /* Smaller font size on mobile */
+    }
+}

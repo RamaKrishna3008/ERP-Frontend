@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student ERP - Home</title>
+    <link rel="stylesheet" href="studentHome.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <h2>Menu</h2>
+        <a href="studentHome.html" style="color:darkgray;">Dashboard</a>
+        <a href="studentProfile.html">Profile</a>
+        <a href="studentAttendance.html">Attendance</a>
+        <a href="studentCourses.html">Courses</a>
+    </div>
+
+    <div class="content">
+        <h1>Welcome to the Student ERP</h1>
+        <p>This is your dashboard. Here you can find all the important information regarding your studies.</p>
+    </div>
+
+    <div class="profile-pic" onclick="toggleDropdown()">
+        <img src="johndoe.jpg" alt="Profile Picture">
+    </div>
+
+    <div class="dropdown" id="dropdown">
+        <button class="dropdown-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            document.getElementById("dropdown").classList.toggle("show");
+        }
+
+        function logout() {
+            // Implement logout functionality here
+            alert("Logged out!");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.profile-pic img')) {
+                var dropdowns = document.getElementsByClassName("dropdown");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

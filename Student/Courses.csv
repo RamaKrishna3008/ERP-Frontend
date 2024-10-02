@@ -1,0 +1,30 @@
+Course Name,Course Code,Studied Year,Semester,Course Description
+Programming Fundamentals,CS101,1st Year,1st Semester,Introduction to programming using C/C++, covering basic syntax, control structures, functions, and arrays.
+Mathematics I,MA101,1st Year,1st Semester,Covers basic calculus, linear algebra, and their applications in computer science.
+Physics,PH101,1st Year,1st Semester,Fundamentals of physics including mechanics, waves, and thermodynamics with applications in engineering.
+Engineering Drawing,ME101,1st Year,1st Semester,Introduction to engineering drawing techniques and CAD software for design.
+Communication Skills,HS101,1st Year,1st Semester,Focuses on developing effective communication skills in professional settings.
+Data Structures,CS201,1st Year,2nd Semester,An introduction to data structures, including lists, stacks, queues, trees, and graphs.
+Mathematics II,MA201,1st Year,2nd Semester,Continued study of calculus, differential equations, and numerical methods.
+Digital Logic Design,EC201,1st Year,2nd Semester,Fundamentals of digital circuits, including combinational and sequential logic design.
+Computer Organization,CS202,1st Year,2nd Semester,Overview of computer architecture, data representation, and instruction set design.
+Software Engineering,CS203,1st Year,2nd Semester,Principles of software engineering, covering methodologies, project management, and lifecycle models.
+Object-Oriented Programming,CS301,2nd Year,1st Semester,Introduction to object-oriented programming concepts using languages like Java or C++.
+Mathematics III,MA301,2nd Year,1st Semester,Focuses on advanced topics in linear algebra and discrete mathematics for computer science applications.
+Operating Systems,CS302,2nd Year,1st Semester,Overview of operating systems principles, including process management, memory management, and file systems.
+Database Management Systems,CS303,2nd Year,1st Semester,Covers the fundamentals of database systems, including data modeling, relational databases, and SQL.
+Computer Networks,CS304,2nd Year,1st Semester,Explores computer networking principles, including architectures, protocols, and security measures.
+Data Mining,CS305,2nd Year,1st Semester,Introduction to data mining techniques and applications in extracting patterns and insights from large datasets.
+Web Technologies,CS306,2nd Year,1st Semester,Covers HTML, CSS, JavaScript, and frameworks for building dynamic and responsive web applications.
+Algorithm Design,CS401,2nd Year,2nd Semester,Study of algorithm design techniques, complexity analysis, and solving algorithmic problems.
+Mathematics IV,MA401,2nd Year,2nd Semester,Advanced mathematical concepts including graph theory, combinatorics, and their applications in computer science.
+Software Project Management,CS402,2nd Year,2nd Semester,Focus on software project planning, execution, monitoring, and team dynamics in software development.
+Mobile App Development,CS403,2nd Year,2nd Semester,Introduction to mobile application development for iOS and Android platforms, covering design and implementation.
+Machine Learning,CS404,2nd Year,2nd Semester,Explores the principles and algorithms of machine learning, including supervised and unsupervised learning techniques.
+Data Structures,CS101,3rd Year,1st Semester,An introduction to data structures, including lists, stacks, queues, trees, and graphs, focusing on their design and implementation.
+Algorithms,CS102,3rd Year,1st Semester,A study of algorithm design, analysis, and complexity, including sorting and searching algorithms.
+Database Management Systems,CS103,3rd Year,1st Semester,Covers the fundamentals of database systems, including data modeling, relational databases, SQL, and database design principles.
+Operating Systems,CS104,3rd Year,1st Semester,An overview of operating systems principles, including process management, memory management, and security.
+Software Engineering,CS105,3rd Year,1st Semester,Focuses on software development methodologies, project management, requirements analysis, design, and testing.
+Computer Networks,CS106,3rd Year,1st Semester,Explores the principles of computer networking, including network architectures, protocols, and communication models.
+Web Technologies,CS107,3rd Year,1st Semester,Introduction to web development, covering HTML, CSS, JavaScript, and frameworks for building dynamic web applications.

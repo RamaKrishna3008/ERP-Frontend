@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student ERP - Attendance</title>
+    <link rel="stylesheet" href="studentHome.css">
+    <style>
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            position: relative;
+            width: 400px;
+            max-height: 80%;
+            overflow-y: auto; /* Add scroll if content exceeds */
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="navbar">
+        <h2>Menu</h2>
+        <a href="studentHome.html">Dashboard</a>
+        <a href="studentProfile.html">Profile</a>
+        <a href="studentAttendance.html" style="color:darkgray;">Attendance</a>
+        <a href="studentCourses.html">Courses</a>
+    </div>
+
+    <div class="content">
+        <h1>Attendance Record</h1>
+        <table id="attendanceTable">
+            <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Course Code</th>
+                    <th>Attendance</th>
+                    <th>View Details</th>
+                </tr>
+            </thead>
+            <tbody>
+              
+            </tbody>
+        </table>
+    </div>
+
+    <div class="profile-pic" onclick="toggleDropdown()">
+        <img src="johndoe.jpg" alt="Profile Picture">
+    </div>
+
+    <div class="dropdown" id="dropdown">
+        <button class="dropdown-btn" onclick="logout()">Logout</button>
+    </div>
+
+ 
+   <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">×</span>
+            <h2>Attendance Details</h2>
+            <table id="detailsTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="attendanceDetails">
+                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        // Function to toggle the dropdown menu
+        function toggleDropdown() {
+            document.getElementById("dropdown").classList.toggle("show");
+        }
+
+        // Function to handle logout
+        function logout() {
+            alert("Logged out!");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.profile-pic img')) {
+                var dropdowns = document.getElementsByClassName("dropdown");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        // Show attendance details popup
+       // Show attendance details popup
+function showDetails(courseName) {
+    const attendanceDetails = {
+    "Data Structures": "2024-08-25,Present;2024-08-27,Present;2024-08-29,Present;2024-08-31,Present;2024-09-02,Present;2024-09-04,Present;2024-09-06,Present;2024-09-08,Absent;2024-09-10,Absent",
+    "Algorithms": "2024-08-26,Present;2024-08-28,Present;2024-08-30,Present;2024-09-01,Present;2024-09-03,Present;2024-09-05,Present;2024-09-07,Present;2024-09-09,Present;2024-09-11,Absent",
+    "Operating Systems": "2024-09-01,Present;2024-09-03,Present;2024-09-05,Present;2024-09-07,Present;2024-09-09,Absent;2024-09-11,Absent;2024-09-13,Absent;2024-09-15,Present;2024-09-17,Present;2024-09-19,Absent",
+    "Database Management": "2024-09-02,Present;2024-09-04,Present;2024-09-06,Present;2024-09-08,Present;2024-09-10,Present;2024-09-12,Absent;2024-09-14,Absent;2024-09-16,Present;2024-09-18,Present",
+    "Software Engineering": "2024-09-05,Present;2024-09-07,Present;2024-09-09,Present;2024-09-11,Present;2024-09-13,Present;2024-09-15,Present;2024-09-17,Present;2024-09-19,Present;2024-09-21,Absent"
+};
+
+
+    const details = attendanceDetails[courseName].split(';');
+    const detailsTableBody = document.getElementById('attendanceDetails');
+    
+    // Clear previous content
+    detailsTableBody.innerHTML = '';
+
+    details.forEach(detail => {
+        const [date, status] = detail.split(',');
+        const newRow = detailsTableBody.insertRow();
+        const dateCell = newRow.insertCell();
+        const statusCell = newRow.insertCell();
+        dateCell.textContent = date.trim();
+        statusCell.textContent = status.trim();
+    });
+
+    document.getElementById('popup').style.display = 'flex';
+}
+
+
+        // Close the popup
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        // Fetch and display attendance data from CSV file
+        fetch('Attendance.csv')
+            .then(response => response.text())
+            .then(data => {
+                const rows = data.split('\n').slice(1); // Skip header row
+                const tableBody = document.getElementById('attendanceTable').getElementsByTagName('tbody')[0];
+
+                rows.forEach(row => {
+                    if (row.trim()) { // Ensure row is not empty
+                        const cols = row.split(',');
+                        const newRow = tableBody.insertRow();
+                        cols.forEach((col, index) => {
+                            const newCell = newRow.insertCell();
+                            newCell.textContent = col.trim();
+                            // Add "View Details" button
+                            if (index === 2) { // Attendance column
+                                const detailsCell = newRow.insertCell();
+                                const detailsButton = document.createElement('button');
+                                detailsButton.textContent = 'View Details';
+                                detailsButton.onclick = () => showDetails(cols[0].trim()); // Pass course name
+                                detailsCell.appendChild(detailsButton);
+                            }
+                        });
+                    }
+                });
+            })
+            .catch(error => console.error('Error fetching the CSV file:', error));
+    </script>
+
+</body>
+</html>
