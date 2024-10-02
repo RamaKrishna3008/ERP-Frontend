@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Summary</title>
+    <style>
+        /* General body reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Card container styling */
+        .summary-card {
+            width: 80%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        /* Table header styling */
+        thead th {
+            background-color: #007bff;
+            color: white;
+            text-align: left;
+            padding: 12px;
+        }
+
+        /* Table row styling */
+        tbody td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Alternate row background */
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Hover effect for table rows */
+        tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Page title styling */
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="summary-card">
+        <h2>Attendance Summary</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Roll Number</th>
+                    <th>Total Days</th>
+                    <th>Days Present</th>
+                    <th>Days Absent</th>
+                    <th>Attendance Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>101</td>
+                    <td>60</td>
+                    <td>55</td>
+                    <td>5</td>
+                    <td>91.7%</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>102</td>
+                    <td>60</td>
+                    <td>50</td>
+                    <td>10</td>
+                    <td>83.3%</td>
+                </tr>
+                <tr>
+                    <td>Emily Johnson</td>
+                    <td>103</td>
+                    <td>60</td>
+                    <td>57</td>
+                    <td>3</td>
+                    <td>95%</td>
+                </tr>
+                <tr>
+                    <td>Michael Brown</td>
+                    <td>104</td>
+                    <td>60</td>
+                    <td>58</td>
+                    <td>2</td>
+                    <td>96.7%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View All Courses</title>
+    <style>
+        /* General body reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling for center layout */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container for the table */
+        .course-container {
+            width: 80%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        /* Table header styling */
+        thead th {
+            background-color: #007bff;
+            color: white;
+            text-align: left;
+            padding: 12px;
+        }
+
+        /* Table row styling */
+        tbody td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Hover effect for table rows */
+        tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Course title styling */
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="course-container">
+        <h1>All Courses</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Course ID</th>
+                    <th>Course Name</th>
+                    <th>Duration</th>
+                    <th>Instructor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Introduction to Computer Science</td>
+                    <td>3 months</td>
+                    <td>Dr. John Doe</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Data Structures and Algorithms</td>
+                    <td>4 months</td>
+                    <td>Prof. Jane Smith</td>
+                </tr>
+                <tr>
+                    <td>103</td>
+                    <td>Database Management Systems</td>
+                    <td>3 months</td>
+                    <td>Dr. Alice Johnson</td>
+                </tr>
+                <tr>
+                    <td>104</td>
+                    <td>Software Engineering</td>
+                    <td>5 months</td>
+                    <td>Prof. Robert Brown</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

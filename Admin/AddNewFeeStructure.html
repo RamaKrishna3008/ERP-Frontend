@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Fee Structure</title>
+    <style>
+        /* General body reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling for center layout */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container for the form */
+        .fee-container {
+            width: 60%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Form heading styling */
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        /* Table cells styling */
+        td {
+            padding: 12px;
+            vertical-align: middle;
+        }
+
+        /* Label cells styling */
+        td.label {
+            width: 30%;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Input styling */
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Button styling */
+        .btn-submit {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fee-container">
+        <h1>Add New Fee Structure</h1>
+        <form action="addfeestructuresuccess.html" method="POST">
+            <table>
+                <tr>
+                    <td class="label">Course Name:</td>
+                    <td><input type="text" name="courseName" placeholder="Enter course name" required></td>
+                </tr>
+                <tr>
+                    <td class="label">Department:</td>
+                    <td>
+                        <select name="department" required>
+                            <option value="" disabled selected>Select Department</option>
+                            <option value="CS">Computer Science</option>
+                            <option value="IT">Information Technology</option>
+                            <option value="ME">Mechanical Engineering</option>
+                            <option value="CE">Civil Engineering</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Fee Amount:</td>
+                    <td><input type="number" name="feeAmount" placeholder="Enter fee amount" required></td>
+                </tr>
+                <tr>
+                    <td class="label">Due Date:</td>
+                    <td><input type="date" name="dueDate" required></td>
+                </tr>
+                <tr>
+                    <td class="label">Payment Mode:</td>
+                    <td>
+                        <select name="paymentMode" required>
+                            <option value="" disabled selected>Select Payment Mode</option>
+                            <option value="Online">Online</option>
+                            <option value="Cash">Cash</option>
+                            <option value="Cheque">Cheque</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <button type="submit" class="btn-submit">Add Fee Structure</button>
+        </form>
+    </div>
+
+</body>
+</html>

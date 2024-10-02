@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Exam</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Exam form container styling */
+        .exam-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* Table cell styling */
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Input field styling */
+        input[type="text"], input[type="date"], input[type="time"], input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+
+        /* Button styling */
+        .btn-add-exam {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        /* Button hover effect */
+        .btn-add-exam:hover {
+            background-color: #0056b3;
+        }
+
+        /* Title styling */
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="exam-form">
+        <h2>Add New Exam</h2>
+        <form action="addexamsuccess.html" method="POST">
+            <table>
+                <tr>
+                    <td><label for="examName">Exam Name:</label></td>
+                    <td><input type="text" id="examName" required placeholder="Enter exam name"></td>
+                </tr>
+                <tr>
+                    <td><label for="examDate">Date:</label></td>
+                    <td><input type="date" id="examDate" required></td>
+                </tr>
+                <tr>
+                    <td><label for="examTime">Time:</label></td>
+                    <td><input type="time" id="examTime" required></td>
+                </tr>
+                <tr>
+                    <td><label for="duration">Duration (minutes):</label></td>
+                    <td><input type="number" id="duration" required placeholder="Enter duration"></td>
+                </tr>
+                <tr>
+                    <td><label for="subject">Subject:</label></td>
+                    <td>
+                        <select id="subject" required>
+                            <option value="">Select Subject</option>
+                            <option value="subject1">Subject 1</option>
+                            <option value="subject2">Subject 2</option>
+                            <option value="subject3">Subject 3</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <button type="submit" class="btn-add-exam">Add Exam</button>
+        </form>
+    </div>
+
+</body>
+</html>

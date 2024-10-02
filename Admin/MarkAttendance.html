@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Attendance</title>
+    <style>
+        /* General body reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Card container styling */
+        .attendance-card {
+            width: 80%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        /* Table header styling */
+        thead th {
+            background-color: #007bff;
+            color: white;
+            text-align: left;
+            padding: 12px;
+        }
+
+        /* Table row styling */
+        tbody td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Submit button styling */
+        .btn-mark {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .btn-mark:hover {
+            background-color: #218838;
+        }
+
+        /* Course title styling */
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="attendance-card">
+        <h2>Mark Attendance</h2>
+        <form action="attendanceSuccess.html" method="POST">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Roll Number</th>
+                        <th>Present</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>101</td>
+                        <td><input type="checkbox" name="attendance101"></td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>102</td>
+                        <td><input type="checkbox" name="attendance102"></td>
+                    </tr>
+                    <tr>
+                        <td>Emily Johnson</td>
+                        <td>103</td>
+                        <td><input type="checkbox" name="attendance103"></td>
+                    </tr>
+                    <tr>
+                        <td>Michael Brown</td>
+                        <td>104</td>
+                        <td><input type="checkbox" name="attendance104"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="btn-mark">Submit Attendance</button>
+        </form>
+    </div>
+
+</body>
+</html>

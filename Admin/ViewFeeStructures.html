@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Fee Structures</title>
+    <style>
+        /* General body reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling for center layout */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container for the table */
+        .fee-container {
+            width: 80%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Table heading styling */
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        /* Table header styling */
+        thead th {
+            background-color: #007bff;
+            color: white;
+            text-align: left;
+            padding: 12px;
+        }
+
+        /* Table row styling */
+        tbody td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Hover effect for table rows */
+        tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Fee structure title styling */
+        .fee-title {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fee-container">
+        <h1>View Fee Structures</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Department</th>
+                    <th>Fee Amount</th>
+                    <th>Due Date</th>
+                    <th>Payment Mode</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="fee-title">Computer Science</td>
+                    <td>CS</td>
+                    <td>$1500</td>
+                    <td>2024-09-30</td>
+                    <td>Online</td>
+                </tr>
+                <tr>
+                    <td class="fee-title">Information Technology</td>
+                    <td>IT</td>
+                    <td>$1400</td>
+                    <td>2024-09-30</td>
+                    <td>Cash</td>
+                </tr>
+                <tr>
+                    <td class="fee-title">Mechanical Engineering</td>
+                    <td>ME</td>
+                    <td>$1600</td>
+                    <td>2024-09-30</td>
+                    <td>Cheque</td>
+                </tr>
+                <tr>
+                    <td class="fee-title">Civil Engineering</td>
+                    <td>CE</td>
+                    <td>$1550</td>
+                    <td>2024-09-30</td>
+                    <td>Online</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

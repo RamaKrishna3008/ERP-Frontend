@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Exam Result</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container for the results form */
+        .result-container {
+            width: 80%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        /* Table header styling */
+        thead th {
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        /* Table row styling */
+        tbody td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Hover effect for table rows */
+        tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Title styling */
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Form styling */
+        .input-container {
+            margin-bottom: 15px;
+        }
+
+        .input-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-container input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Button styling */
+        .btn-add-result {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn-add-result:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="result-container">
+        <h1>Add Exam Result</h1>
+        <form action="addresultsuccess.html" method="POST">
+            <div class="input-container">
+                <label for="studentId">Student ID</label>
+                <input type="text" id="studentId" placeholder="Enter student ID" required>
+            </div>
+            <div class="input-container">
+                <label for="examId">Exam ID</label>
+                <input type="text" id="examId" placeholder="Enter exam ID" required>
+            </div>
+            <div class="input-container">
+                <label for="marks">Marks Obtained</label>
+                <input type="number" id="marks" placeholder="Enter marks" required>
+            </div>
+            <button type="submit" class="btn-add-result">Add Result</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Exam ID</th>
+                    <th>Marks Obtained</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>1</td>
+                    <td>85</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>2</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>103</td>
+                    <td>3</td>
+                    <td>75</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

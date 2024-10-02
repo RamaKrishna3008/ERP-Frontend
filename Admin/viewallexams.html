@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View All Exams</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container for the exam table */
+        .exam-container {
+            width: 80%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        /* Table header styling */
+        thead th {
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        /* Table row styling */
+        tbody td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Hover effect for table rows */
+        tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Exam title styling */
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="exam-container">
+        <h1>All Exams</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Exam ID</th>
+                    <th>Exam Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Duration (min)</th>
+                    <th>Subject</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Midterm Exam</td>
+                    <td>2024-10-10</td>
+                    <td>10:00 AM</td>
+                    <td>120</td>
+                    <td>Mathematics</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Final Exam</td>
+                    <td>2024-12-15</td>
+                    <td>1:00 PM</td>
+                    <td>180</td>
+                    <td>Physics</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Quiz 1</td>
+                    <td>2024-11-05</td>
+                    <td>9:00 AM</td>
+                    <td>30</td>
+                    <td>Chemistry</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Project Presentation</td>
+                    <td>2024-11-20</td>
+                    <td>3:00 PM</td>
+                    <td>60</td>
+                    <td>Computer Science</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
